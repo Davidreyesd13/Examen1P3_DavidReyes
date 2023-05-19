@@ -1,6 +1,8 @@
 #pragma once
 class Diferencial
 {
-	float aceleracion;
+	float aceleracion=0;
+public:
+	Diferencial(float);
 };
 

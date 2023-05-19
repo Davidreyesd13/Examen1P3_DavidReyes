@@ -19,5 +19,6 @@ private:
 	CajadeCambios* cd;
 public:
 	Auto(string,string,int,int,float);
+
 };
 
