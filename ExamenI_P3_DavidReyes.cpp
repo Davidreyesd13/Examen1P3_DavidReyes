@@ -39,10 +39,10 @@ void carrera(std::vector<Auto> v,int cc1,int cc2) {
 	}
 }
 void menu() {
-	int opcion = 6, velmax, caballosf, carroP1, carroP2;
+	int opcion = 6,opcionor, velmax, caballosf, carroP1, carroP2;
 	float aceleracion;
 	string marca, modelo;
-	vector<Auto>carros;
+	vector<Auto>carros,ordenar;
 	vector<Neumaticos>neumaticos;
 	//crear radiadores
 	neumaticos.push_back(Neumaticos(0.5));
@@ -92,20 +92,56 @@ void menu() {
 				cout << "Tiene que crear carros primero";
 			}
 			else {
-				for (int i = 0; i < carros.size(); i++)
-				{
-					cout << i << ". ";
-					cout << "Marca: " << carros.at(i).getmarca() << endl;
-					cout << "Modelo: " << carros.at(i).getmodelo() << endl;
-					cout << "Velocidad Maxima: " << carros.at(i).getvelmax() << endl;
-					cout << "Caballos de Fuerza: " << carros.at(i).getcaballosf() << endl;
-					cout << "Aceleracion: " << carros.at(i).getaceleracion() << endl;
-				}
+				imprimir(carros);
 			}
 			break;
 		case 3:
-			cout << "Ordenar autos"<<endl;
+			cout << "Ordenar autos"<<endl<<"Autos existentes"<<endl;
 			imprimir(carros);
+			cout << "1.Velocidad Maxima\n2.Caballos de fuerza\n3.Aceleracion"<<endl;
+			cin >> opcionor;
+			switch (opcionor)
+			{
+			case 1:
+				for (int i = 0; i < carros.size(); i++)
+				{
+					for (int j = i+1; j < carros.size(); j++)
+					{
+						if (carros.at(i).getvelmax()>carros.at(j).getvelmax()) {
+							ordenar.push_back(carros.at(i));
+						}
+					}
+				}
+				imprimir(ordenar);
+				ordenar.clear();
+				break;
+			case 2:
+				for (int i = 0; i < carros.size(); i++)
+				{
+					for (int j = i + 1; j < carros.size(); j++)
+					{
+						if (carros.at(i).getcaballosf() > carros.at(j).getcaballosf()) {
+							ordenar.push_back(carros.at(i));
+						}
+					}
+				}
+				imprimir(ordenar);
+				ordenar.clear();
+				break;
+			case 3:
+				for (int i = 0; i < carros.size(); i++)
+				{
+					for (int j = i + 1; j < carros.size(); j++)
+					{
+						if (carros.at(i).getaceleracion() > carros.at(j).getaceleracion()) {
+							ordenar.push_back(carros.at(i));
+						}
+					}
+				}
+				imprimir(ordenar);
+				ordenar.clear();
+				break;
+			}
 			break;
 		case 4:
 			cout << "Carrera"<<endl;
