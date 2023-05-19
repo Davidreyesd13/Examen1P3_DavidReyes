@@ -5,7 +5,6 @@ class Diferencial
 public:
 	Diferencial(float);
 	int getaceleracion();
-	void setaceleracion(int);
 
 };
 

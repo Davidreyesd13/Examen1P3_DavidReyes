@@ -5,6 +5,6 @@ class Neumaticos
 public:
 	Neumaticos(float ace);
 	float getaceleracion();
-	void setaceleracion(float);
+
 };
 

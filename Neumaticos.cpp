@@ -11,7 +11,4 @@ float Neumaticos::getaceleracion()
 	return aceleracion;
 }
 
-void Neumaticos::setaceleracion(float ace)
-{
-	aceleracion = ace;
-}
+

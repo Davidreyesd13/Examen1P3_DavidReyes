@@ -1,6 +1,6 @@
 #include "Auto.h"
 
-Auto::Auto(const string Marca, const string Modelo, const int vm, const int cf, const float ace)
+Auto::Auto( string Marca,  string Modelo,  int vm,  int cf,  float ace)
 {
 	marca = Marca;
 	modelo = Modelo;
@@ -9,15 +9,53 @@ Auto::Auto(const string Marca, const string Modelo, const int vm, const int cf, 
 	aceleracion = ace;
 }
 
-Auto::~Auto()
-{
-	if (!marca.empty()&&!modelo.empty()&&velmax!=0&&caballosf!=0&&aceleracion!=0) {
-		delete marca,modelo,velmax,caballosf,aceleracion;
 
-	}
-}
-
-void Auto::setmarca(string marc)
+void Auto::setmarca( string marc)
 {
 	marca = marc;
+}
+
+void Auto::setmodelo( string mode)
+{
+	modelo = mode;
+}
+
+void Auto::setvelmax(int vel)
+{
+	velmax = vel;
+}
+
+void Auto::setcaballosf(int cf)
+{
+caballosf=	cf;
+}
+
+void Auto::setaceleracion(float ace)
+{
+	aceleracion = ace;
+}
+
+string Auto::getmarca()
+{
+	return marca;
+}
+
+string Auto::getmodelo()
+{
+	return modelo;
+}
+
+int Auto::getvelmax()
+{
+	return velmax;
+}
+
+int Auto::getcaballosf()
+{
+	return caballosf;
+}
+
+float Auto::getaceleracion()
+{
+	return aceleracion;
 }
