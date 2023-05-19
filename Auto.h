@@ -9,16 +9,21 @@ using namespace std;
 class Auto
 {
 private:
-	string marca,modelo;
-	int velmax, caballosf;
-	float aceleracion;
+	const string marca,modelo;
+	const int velmax, caballosf;
+	const float aceleracion;
 	Ciguenal *c;
 	Radiador *r;
 	Neumaticos* n;
 	Diferencial* d;
 	CajadeCambios* cd;
 public:
-	Auto(string,string,int,int,float);
-
+	Auto(const string,const string,const int,const int,const float);
+	~Auto();
+	void setmarca(string marc);
+	void setmodelo();
+	void setvelmax();
+	void setcaballosf();
+	void setaceleracion();
 };
 
